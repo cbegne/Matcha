@@ -1,0 +1,96 @@
+@media screen and (max-width: 1300px){
+  .each-box { width: 900px !important; }
+  .my-tags, .my-pictures { width: 900px !important; }
+  .my-bio { width: 570px !important; }
+  .geolocate { width: 320px !important; }
+  .update-infos { width: 450px !important; }
+  .password { width: 440px !important; }
+}
+
+@media screen and (max-width: 900px){
+  .each-box { width: 600px !important; }
+  .shared-container { flex-direction: column !important; }
+}
+
+@media screen and (max-width: 660px){
+  .each-box { width: 310px !important; }
+  .shared-container { flex-direction: column !important; }
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.each-box {
+  background-color: #ffffff;
+  border: 1px solid #D8D8D8;
+  width: 1300px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 30px;
+  margin: 5px;
+  padding: 15px;
+}
+
+.my-profile-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.my-tags, .my-pictures {
+  width: 1300px;
+}
+
+.my-bio {
+  width: 800px;
+}
+
+.update-infos {
+  width: 650px;
+}
+
+.password {
+  width: 640px;
+}
+
+.geolocate {
+  width: 490px;
+}
+
+.geolocate-text {
+  margin-bottom: 10px;
+}
+
+.display-picture-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display-picture-box h3 {
+  font-size: 1.4rem;
+}
+
+textarea {
+  resize: none;
+  font-weight: normal;
+}
+
+.shared-container {
+  display: flex;
+}
+
+.input-label {
+  margin-right: 5px;
+}
+
+.form-myprofile {
+  margin-bottom: 5px;
+}
+
+.form-myprofile .form-control {
+  width: 200px;
+}
+
+.form-myprofile-date .form-control {
+  width: 100px;
+}

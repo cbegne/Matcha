@@ -1,0 +1,149 @@
+@media screen and (max-width: 660px){
+  .chat-box { width: 300px !important; }
+  .shared-container { flex-direction: column !important; }
+  .chat-container { min-width: 320px !important; }
+  .input-message { width: 200px !important; }
+  .all-messages { max-height: 300px !important; }
+}
+
+.chats-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+}
+
+.chat-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  width: 70%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+}
+
+.chat-box {
+  display: flex;
+  margin-bottom: 5px;
+  width: 500px;
+  border: 1px solid #333333;
+  background-color: #fff;
+}
+
+.chat-box.new-chats {
+  box-shadow: -1em 0 0.4em #b7b7e5;
+}
+
+.chat-box-header {
+  display: flex;
+  color: #333333;
+}
+
+.chat-box-connected {
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+
+.chat-profile-pic {
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.message-profile-pic {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+}
+
+h2.fa-commenting-o {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #333333;
+  font-size: 1.8rem;
+}
+
+.chat-box:hover {
+  text-decoration: none;
+}
+
+.message-display {
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  overflow-wrap: break-word;
+  min-width: 220px;
+  /*white-space: pre-wrap;*/
+  /*hyphens: auto;*/
+}
+
+.input-message {
+  border-radius: 0px;
+}
+
+.input-message input {
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+
+.input-message-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.input-message {
+  width: 400px;
+}
+
+.submit-message {
+  width: 100px;
+  border-radius: 0px;
+}
+
+.all-messages {
+  list-style-type: none;
+  overflow-y: scroll;
+  max-height: 700px;
+}
+
+.message {
+  max-width: 445px;
+}
+
+.other-chat {
+  background-color: #e6e6ff;
+}
+
+.logged-user-chat {
+  background-color: #f2f2f2;
+}
+
+.time {
+  color: #8E1468;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.chat-closed {
+  background-color: #8E1468;
+  width: 500px;
+  text-align: center;
+  line-height: 3em;
+  color: #fff;
+}

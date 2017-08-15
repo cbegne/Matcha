@@ -1,0 +1,77 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 60px;
+  min-height: 100%;
+  font-family: 'Lato', sans-serif;
+  background-color: #f8f8f8;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.fa-envelope-o {
+  color: #848484;
+}
+
+.footer-mail {
+  color: #848484;
+  margin-left: 10px;
+}
+
+.footer-mail:hover {
+  text-decoration: none;
+  color: #8E1468;
+}
+
+.close-container {
+  margin-top: 70px;
+  margin-left: 30px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+  width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/*.handy-notify {
+  position: fixed;
+  background: #333;
+  right: 2%;
+  color: white;
+  border-radius: 3px;
+  padding: 12px 30px 12px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+  z-index: 3;
+  top: 105%;
+}*/
+
+/*
+blue1 = #14C8CC
+blue2 = #3D9799
+green = #00FF75
+red = #B22540
+light red = #e7bdc5
+purple = #8E1468
+body grey = #f8f8f8
+footer grey = #efefef
+notif socket black = #333
+dark grey = #333333
+*/

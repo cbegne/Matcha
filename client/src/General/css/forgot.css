@@ -1,0 +1,28 @@
+@media screen and (max-width: 640px){
+  .forgot-container { width: 350px !important; }
+}
+
+.forgot-container {
+  overflow: hidden;
+  width: 700px;
+  margin: 70px auto 0;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+}
+
+span.fa-arrow-left:hover {
+  color: #8E1468;
+}
+
+span.fa-arrow-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #B22540;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.7rem;
+  text-transform: uppercase;
+}

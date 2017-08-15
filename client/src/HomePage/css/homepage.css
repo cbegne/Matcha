@@ -1,0 +1,78 @@
+@media screen and (max-width: 765px){
+  form.form-inline { padding-right: 80px; }
+}
+
+@media screen and (max-width: 640px){
+  .homepage-container { width: 350px !important; margin-top: 10px !important }
+  form.form-inline { padding-right: 20px; }
+}
+
+.homepage-container {
+  overflow: hidden;
+  width: 700px;
+  margin: 70px auto 0;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 30px;
+  margin-bottom: 10px;
+  padding-bottom: 50px;
+}
+
+.homepage-container h1 {
+  color: #B22540;
+}
+
+.homepage-container h2 {
+  color: #8E1468;
+}
+
+.homepage-container h1, h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 23px;
+  letter-spacing: 0.7rem;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.size-form-signup {
+  padding-left: 15px;
+  width: 330px;
+}
+
+.size-radio-signup {
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.size-form-signin {
+  width: 180px;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+}
+
+.submit-signup {
+  margin-left: 15px;
+}
+
+.submit-signin {
+  margin-right: 15px;
+}
+
+.homepage-forgot-password-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.forgot-password {
+  color: grey;
+}

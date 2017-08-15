@@ -1,0 +1,71 @@
+@media screen and (max-width: 780px){
+  .one-additional-picture { object-fit: cover; width: 250px; margin-top: 5px;}
+}
+
+.square-profile-pic {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.pic {
+  position: relative;
+}
+
+.my-profile-pic {
+  position: relative;
+  margin-right: 15px;
+}
+
+.one-profile-pic {
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+.dropzone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.additional-picture {
+  position: relative;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.all-additional-pictures {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+span.glyphicon-camera {
+  font-size: 3rem;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+span.glyphicon-camera:hover, button.glyphicon-remove:hover  {
+  font-size: 4rem;
+  transition: all 0.1s ease-in;
+}
+
+button.glyphicon-remove {
+  font-size: 2rem;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  cursor: pointer;
+  color: #B21212;
+  opacity: 0.5;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

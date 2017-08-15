@@ -1,0 +1,36 @@
+.profile-box {
+  padding: 15px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid #D8D8D8;
+  width: 280px;
+  text-decoration: none;
+}
+
+.profile-box a {
+  text-decoration: none;
+}
+
+.profile-box-header {
+  display: flex;
+  align-items: center;
+}
+
+.all-likes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h2.login-likes {
+  letter-spacing: 4px;
+  word-wrap: break-word;
+  color: black;
+}
+
+h2.title-likes {
+  text-align: center;
+}
+
+.no-likes {
+  margin-left: 10px;
+}

@@ -1,0 +1,94 @@
+button.fa-star-o, button.fa-star, span.fa-star.cannot-like, button.fa-eye, button.fa-eye-slash, button.fa-exclamation-circle, .one-profile-interactions .fa-comments {
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button.fa-star-o:hover {
+  color: #ffcc00;
+}
+
+button.fa-star.liked {
+  color: #ffcc00;
+}
+
+span.fa-star.cannot-like {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+span.fa-star.cannot-like, span.fa-comments.cannot-chat {
+  color: #A4A4A4;
+}
+
+button.fa-eye-slash.blocked, button.fa-exclamation-circle.reported {
+  color: #B22540;
+}
+
+button.fa-eye:hover {
+  color: #8E1468;
+}
+
+button.report {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button.fa-exclamation-circle.not-reported:hover {
+  color: #3D9799;
+}
+
+.one-profile-interactions .fa-comments {
+  padding-left: 6px;
+}
+
+.one-profile-interactions a.fa-comments {
+  color: #333333;
+}
+
+.one-profile-interactions a.fa-comments:hover {
+  text-decoration: none;
+  color: #990033;
+}
+
+.fa-trophy {
+  margin-left: 20px;
+  font-size: 3rem;
+}
+
+.fa-trophy.bronze {
+  color: #cd7f32;
+}
+
+.fa-trophy.silver {
+  color: #c0c0c0;
+}
+
+.fa-trophy.gold {
+  color: #ffd700;
+}
+
+.fa-trophy.diamond {
+  color: #b9f2ff;
+}
+
+.fa-circle {
+  color: #009933;
+}
+
+.connected {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.one-profile-interactions {
+  text-align: center;
+}
+
+.infos-oneprofile {
+  display: inline-block;
+  width: 90px;
+}

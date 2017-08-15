@@ -1,0 +1,78 @@
+@media screen and (max-width: 780px){
+  .slider-container.row { display: flex; flex-direction: column; margin: 0; }
+  .slider { width: 90% !important; margin-left: 0 !important; }
+  .rc-slider-mark-text.rc-slider-mark-text-active { font-size: 1rem;}
+}
+
+.suggestions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-box-info {
+  text-align: center;
+}
+
+.sort-container {
+  margin-left: 1rem;
+}
+
+.sort-container button {
+  margin-left: 1rem;
+  outline: 0;
+}
+
+.sort-container button:hover, .sort-container button:focus {
+  color: #8E1468;
+  outline: 0;
+}
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.slider {
+  width: 70%;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  margin-top: 3rem;
+}
+
+.slider-title {
+  color: #8E1468;
+}
+
+.filter-search {
+  margin: 10px;
+  padding: 10px;
+  width: 90%;
+  border: 1px #D8D8D8 solid;
+  background-color: #fff;
+  text-align: center;
+}
+
+.filter-search button.advanced-search {
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  font-size: 1.6rem;
+}
+
+.filter-search button:focus {
+  outline: none;
+}
+
+div.fa-arrow-circle-down {
+  color: #B22540;
+}
+
+div.fa-arrow-circle-down:hover {
+  color: #8E1468;
+}
+
+.search-no-profile {
+  margin-top: 2rem;
+}

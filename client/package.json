@@ -1,0 +1,43 @@
+{
+  "name": "routed-react",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8000",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-eslint": "^7.2.3",
+    "eslint-config-react-app": "^1.0.4",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "font-awesome": "^4.7.0",
+    "handy-notification": "^1.0.23",
+    "history": "^4.6.2",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.18.1",
+    "rc-slider": "^8.3.0",
+    "rc-tooltip": "^3.4.7",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.1",
+    "react-dom": "^15.5.4",
+    "react-dropzone": "^3.13.3",
+    "react-notifications": "^1.4.3",
+    "react-router-dom": "^4.1.1",
+    "react-tag-input": "^4.7.2",
+    "react-tap-event-plugin": "^2.0.1",
+    "socket.io-client": "^2.0.3",
+    "universal-cookie": "^2.0.8"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
