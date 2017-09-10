@@ -9,8 +9,6 @@ const getTagsSuggestions = async () => {
     console.error('Error: ', err)
     return null;
   }
-}
-
-export {
-  getTagsSuggestions,
 };
+
+export { getTagsSuggestions };

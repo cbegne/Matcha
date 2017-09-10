@@ -77,8 +77,8 @@ const gallery = async (req, res) => {
     return res.send({ success: false, error: 'Identification impossible.' });
   }
   const { gender, orientation, blockes, blockedBy } = profile;
-  const genderSearch = Filter.gender({ gender, orientation });
-  const orientationSearch = Filter.orientation({ orientation });
+  const genderSearch = Filter.genderPrefered({ gender, orientation });
+  const orientationSearch = Filter.orientationPrefered({ orientation });
   const blockedFilter = blockes.concat(blockedBy, login);
   let users;
   if (orientation === 'Bisexuel') {

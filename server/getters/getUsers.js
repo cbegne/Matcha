@@ -1,6 +1,4 @@
-import * as Control from '../tools/usersControl.js';
 import Mongo from '../config/MongoConnection.js';
-import * as User from '../tools/usersTools.js';
 
 const getUser = async ({ field, value }) => {
   try {
@@ -10,48 +8,48 @@ const getUser = async ({ field, value }) => {
     console.error('Error: ', err)
     return null;
   }
-}
+};
 
 const getUserExclBlocked = async (login, blockedFilter) => {
   try {
     const user = await Mongo.db.collection('users').findOne(
-    {
-      login:
       {
-        $eq: login,
-        $nin: blockedFilter,
+        login:
+        {
+          $eq: login,
+          $nin: blockedFilter,
 
+        },
+        auth: true,
       },
-      auth: true,
-    }
     );
     return user;
   } catch (err) {
     console.error('Error: ', err)
     return null;
   }
-}
+};
 
 const getProfilesIn = async (logins, blockedFilter) => {
   try {
     const users = await Mongo.db.collection('users').find(
       { login:
-        {
-          $in: logins,
-          $nin: blockedFilter,
-        },
+      {
+        $in: logins,
+        $nin: blockedFilter,
+      },
       },
       {
         email: 0,
         password: 0,
-      }
+      },
     ).toArray();
     return users;
   } catch (err) {
     console.error('Error: ', err)
     return null;
   }
-}
+};
 
 const allUsersSuggested = async (genderSearch, orientationSearch, blockedFilter) => {
   try {
@@ -65,7 +63,7 @@ const allUsersSuggested = async (genderSearch, orientationSearch, blockedFilter)
       {
         email: 0,
         password: 0,
-      }
+      },
     ).toArray();
     return users;
   } catch (err) {

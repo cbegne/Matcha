@@ -17,6 +17,7 @@ const addLike = async (req, res) => {
 }
 
 const deleteLike = async (req, res) => {
+  console.log(req);
   const { loginUnliked } = req.params;
   const login = User.getLoggedUser(req);
   Updater.deleteLikeAndMatch({ login, req });

@@ -1,15 +1,18 @@
-import MongoClient from 'mongodb';
-import assert from 'assert';
-import config from './config.js';
+import { MongoClient } from 'mongodb';
 
-class Mongo {
-  static connect() {
-    MongoClient.connect(config.database, (err, db) => {
-      assert.equal(null, err);
-      Mongo.db = db;
-      console.log("Connected to Mongo database.");
+const MongoConnection = {
+  connect() {
+    return new Promise((resolve, reject) => {
+      MongoClient.connect(process.env.MONGODB_URI, (err, db) => {
+        if (err) {
+          reject(err);
+        }
+        this.db = db;
+        resolve();
+        console.log('Connected to Mongo database.');
+      });
     });
-  }
-}
+  },
+};
 
-export default Mongo;
+export default MongoConnection;

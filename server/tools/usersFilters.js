@@ -1,23 +1,23 @@
-const gender = ({ orientation, gender }) => {
+const genderPrefered = ({ orientation, gender }) => {
   if (orientation === 'Bisexuel') {
-    return [ 'male', 'female' ];
+    return ['male', 'female'];
   }
   if ((gender === 'male' && orientation === 'Hétérosexuel')
   || (gender === 'female' && orientation === 'Homosexuel')) {
-    return [ 'female' ];
+    return ['female'];
   }
-  return [ 'male' ];
-}
+  return ['male'];
+};
 
-const orientation = ({ orientation }) => {
+const orientationPrefered = ({ orientation }) => {
   if (orientation === 'Homosexuel') {
-    return [ 'Bisexuel', 'Homosexuel' ];
+    return ['Bisexuel', 'Homosexuel'];
   }
   if (orientation === 'Hétérosexuel') {
-    return [ 'Bisexuel', 'Hétérosexuel' ];
+    return ['Bisexuel', 'Hétérosexuel'];
   }
-  return [ 'Bisexuel' ];
-}
+  return ['Bisexuel'];
+};
 
 const distanceSlot = (distance) => {
   if (distance < 10) {
@@ -33,6 +33,6 @@ const distanceSlot = (distance) => {
     return 1;
   }
   return 0;
-}
+};
 
-export { gender, orientation, distanceSlot };
+export { genderPrefered, orientationPrefered, distanceSlot };

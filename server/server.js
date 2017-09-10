@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
 import moment from 'moment';
@@ -11,7 +12,6 @@ import socketIo from 'socket.io';
 import socketioJwt from 'socketio-jwt';
 import randtoken from 'rand-token';
 
-import config from './config/config.js';
 import routes from './routes.js';
 import Mongo from './config/MongoConnection.js';
 import socket from './socketIo.js';
@@ -25,12 +25,14 @@ const port = 8000;
 // Set date language to French
 moment().locale('fr');
 
+dotenv.config({ path: '.env' });
+
 // Connect to Mongo Database
 Mongo.connect();
 
 // Check loggedUser tocken before connecting to socket Io
 io.use(socketioJwt.authorize({
-  secret: config.secret,
+  secret: process.env.SESSION_SECRET,
   handshake: true
 }));
 
