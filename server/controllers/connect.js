@@ -1,5 +1,4 @@
 import randtoken from 'rand-token';
-import jwt  from 'jsonwebtoken';
 import mailer from './mail.js';
 import * as Control from '../tools/usersControl.js';
 import * as Getter from '../getters/getUsers.js';
@@ -20,13 +19,13 @@ const forgot = async (req, res) => {
   Updater.addConfirmationKeyForgot({ login, confirmationKey });
   mailer(email,
     `Bonjour ${login}, suivez ce lien pour changer votre mot de passe http://localhost:3000/change/${confirmationKey}`,
-    'Matcha - Oubli identifiant ou mot de passe'
+    'Matcha - Oubli identifiant ou mot de passe',
   );
   return res.send({
     success: true,
-    message: 'Un mail vous a été envoyé réinitialiser votre mot de passe.'
+    message: 'Un mail vous a été envoyé réinitialiser votre mot de passe.',
   });
-}
+};
 
 const newPassword = async (req, res) => {
   const { password, passwordConfirm, confirmationKey } = req.body;
@@ -51,7 +50,7 @@ const newPassword = async (req, res) => {
   const passwordHash = Control.generateHash(password);
   Updater.changePasswordAndReset({ login, passwordHash });
   return res.send({ success: true, message: `Votre mot de passe a été mis à jour, ${login} !` });
-}
+};
 
 const confirm = async (req, res) => {
   const { confirmationKey } = req.body;
@@ -97,7 +96,6 @@ const signin = async (req, res) => {
       message: 'Votre mot de passe est incorrect.',
     });
   }
-  const { _id } = user;
   const token = User.createToken(user);
   Updater.connectUser({ login });
   return res.send({ success: true, token, message: '' });

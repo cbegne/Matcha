@@ -9,20 +9,20 @@ const addProfilePic = async (req, res) => {
     return res.send({
       success: false,
       message: 'Votre photo doit être au format jpeg ou png.',
-    })
+    });
   }
   const login = User.getLoggedUser(req);
   const profile = await Getter.getUser({ field: 'login', value: login });
   const filename = profile.profilePic;
   if (filename) {
-  const path = `${__dirname}/../public/uploads/${filename}`;
+    const path = `${__dirname}/../public/uploads/${filename}`;
     if (fs.existsSync(path)) {
       fs.unlink(path, (err) => {
         if (err) {
           console.error(err);
           return res.send({
-          success: false,
-          message: "Une erreur est survenue. Revenez plus tard, nous allons résoudre le problème.",
+            success: false,
+            message: 'Une erreur est survenue. Revenez plus tard, nous allons résoudre le problème.',
           });
         }
       });
@@ -30,14 +30,14 @@ const addProfilePic = async (req, res) => {
   }
   Updater.updateProfilePic({ login, req });
   return res.send({ success: true, profilePicName: req.file.filename, message: '' });
-}
+};
 
 const addPics = (req, res) => {
   if (req.files === undefined) {
     return res.send({
       success: false,
       message: 'Vos photos doivent être au format jpeg ou png.',
-    })
+    });
   }
   const login = User.getLoggedUser(req);
   const picsFilename = req.files.map(pic => pic.filename);
@@ -46,7 +46,7 @@ const addPics = (req, res) => {
   ));
   Updater.updatePics({ login, picsFilename: checkOneName });
   return res.send({ success: true, picNames: checkOneName, message: '' });
-}
+};
 
 const removePic = (req, res) => {
   const login = User.getLoggedUser(req);
@@ -57,14 +57,14 @@ const removePic = (req, res) => {
       if (err) {
         console.error(err);
         return res.send({
-        success: false,
-        message: "Une erreur est survenue. Revenez plus tard, nous allons résoudre le problème.",
+          success: false,
+          message: 'Une erreur est survenue. Revenez plus tard, nous allons résoudre le problème.',
         });
       }
     });
   }
   Updater.removePic({ login, filename });
   return res.send({ success: true, message: '' });
-}
+};
 
 export { addProfilePic, addPics, removePic };

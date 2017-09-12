@@ -15,11 +15,11 @@ const geolocate = (req, res) => {
       res.send({ success: false, message: "Nous n'avons pas réussi à vous géolocaliser..." });
     }
     const loc = cLoc.loc.split(',');
-    const latitude = parseFloat(loc[0]);
-    const longitude = parseFloat(loc[1]);
-    Updater.geolocate({ login, latitude, longitude });
+    const lat = parseFloat(loc[0]);
+    const long = parseFloat(loc[1]);
+    Updater.geolocate({ login, latitude: lat, longitude: long });
   });
   return res.send({ success: true, message: 'Votre localisation a été mise à jour!' });
-}
+};
 
 export default geolocate;

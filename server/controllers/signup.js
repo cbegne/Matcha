@@ -1,15 +1,13 @@
 import ipInfo from 'ipinfo';
-import mailer from './mail.js';
 import moment from 'moment';
 import randtoken from 'rand-token';
 
+import mailer from './mail.js';
 import * as Control from '../tools/usersControl.js';
 import * as Getter from '../getters/getUsers.js';
 import Mongo from '../config/MongoConnection.js';
-import * as User from '../tools/usersTools.js';
 
 const signup = async (req, res) => {
-
   // extraction of info from request and verification that no user already exists with that login
   const {
     login,
@@ -23,24 +21,25 @@ const signup = async (req, res) => {
     birthDate,
   } = req.body;
 
-  if (!login || !email || !password || !passwordConfirm || !firstName || !lastName || !gender || !orientation || !birthDate) {
+  if (!login || !email || !password || !passwordConfirm || !firstName
+    || !lastName || !gender || !orientation || !birthDate) {
     return res.send({
       success: false,
-      message: 'Merci de remplir tous les champs !'
+      message: 'Merci de remplir tous les champs !',
     });
   }
   let unique = await Getter.getUser({ field: 'login', value: login });
   if (unique) {
     return res.send({
       success: false,
-      message: 'Cet identifiant est déjà utilisé.'
+      message: 'Cet identifiant est déjà utilisé.',
     });
   }
   unique = await Getter.getUser({ field: 'email', value: email });
   if (unique) {
     return res.send({
       success: false,
-      message: 'Un compte existe déjà avec cet email.'
+      message: 'Un compte existe déjà avec cet email.',
     });
   }
 
@@ -63,7 +62,7 @@ const signup = async (req, res) => {
   const passwordHash = Control.generateHash(password);
   ipInfo((err, cLoc) => {
     let latitude;
-    let longitude
+    let longitude;
     if (err === null) {
       const loc = cLoc.loc.split(',');
       latitude = parseFloat(loc[0]);
@@ -72,7 +71,7 @@ const signup = async (req, res) => {
       latitude = 0;
       longitude = 0;
     }
-    const date = moment(birthDate, "DD/MM/YYYY", true).format();
+    const date = moment(birthDate, 'DD/MM/YYYY', true).format();
     Mongo.db.collection('users').insertOne({
       login,
       email,
@@ -85,7 +84,7 @@ const signup = async (req, res) => {
       confirmationKey,
       bio: '',
       tags: [],
-      geolocation: { latitude , longitude },
+      geolocation: { latitude, longitude },
       profilePic: '',
       pictures: [],
       likes: [],
@@ -108,11 +107,11 @@ const signup = async (req, res) => {
   });
   mailer(email,
     `Bienvenue ${login}, suivez ce lien pour valider votre compte http://localhost:3000/auth/${confirmationKey}`,
-    'Matcha - Validez votre compte'
+    'Matcha - Validez votre compte',
   );
   return res.send({
     success: true,
-    message: `Un mail vous a été envoyé pour confirmer votre compte !`
+    message: 'Un mail vous a été envoyé pour confirmer votre compte !',
   });
 };
 

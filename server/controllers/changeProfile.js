@@ -10,14 +10,14 @@ const changeInfos = (req, res) => {
   }
   const login = User.getLoggedUser(req);
   Updater.updateInfos({ login, req });
-  return res.send({ success: true, message: 'Votre profil a été mis à jour.', error: ''});
-}
+  return res.send({ success: true, message: 'Votre profil a été mis à jour.', error: '' });
+};
 
 const changeBio = (req, res) => {
   const login = User.getLoggedUser(req);
   Updater.updateBio({ login, req });
-  return res.send({ success: true, message: 'Votre profil a été mis à jour.', error: ''});
-}
+  return res.send({ success: true, message: 'Votre profil a été mis à jour.', error: '' });
+};
 
 const changeTags = (req, res) => {
   const login = User.getLoggedUser(req);
@@ -44,7 +44,7 @@ const changePassword = async (req, res) => {
   }
   const passwordHash = Control.generateHash(password);
   Updater.changePassword({ login, passwordHash });
-  return res.send({ success: true, message: 'Votre mot de passe a été mis à jour.', error: ''});
-}
+  return res.send({ success: true, message: 'Votre mot de passe a été mis à jour.', error: '' });
+};
 
 export { changeInfos, changeBio, changeTags, changePassword };

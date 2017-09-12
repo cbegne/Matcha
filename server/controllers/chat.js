@@ -16,14 +16,14 @@ const changeMatchOrder = async ({ login1, login2 }) => {
       Updater.changeMatchOrder({ login: login1, matches });
     }
   }
-}
+};
 
 const getChatProfile = async (req, res) => {
   const { login } = req.params;
   const loggedUser = User.getLoggedUser(req);
   const profileLoggedUser = await Getter.getUser({ field: 'login', value: loggedUser });
   const { matches, blockedBy } = profileLoggedUser;
-  if (matches.includes(login) ===  false || blockedBy.includes(login) === true) {
+  if (matches.includes(login) === false || blockedBy.includes(login) === true) {
     return res.send({ success: false, error: 'Pas de match.' });
   }
   const profile = await Getter.getUser({ field: 'login', value: login });
@@ -44,7 +44,7 @@ const getChatProfile = async (req, res) => {
     profile: profileFilter,
     loggedUser: loggedUserFilter,
     discussion,
-    error: ''
+    error: '',
   });
 };
 
@@ -55,8 +55,8 @@ const addMessage = async (req, res) => {
   if (chats === null) {
     ChatUpdater.createDiscussion({ login1: loggedUser, login2: login, message });
   } else {
-    const discussion_id = chats._id;
-    ChatUpdater.addMessage({ _id: discussion_id, login: loggedUser, message });
+    const discussionId = chats._id;
+    ChatUpdater.addMessage({ _id: discussionId, login: loggedUser, message });
   }
   changeMatchOrder({ login1: login, login2: loggedUser });
   return res.send({
@@ -68,7 +68,7 @@ const addUnreadMessage = async (req, res) => {
   const { toUser, fromUser } = req.body;
   ChatUpdater.increaseNewMessages({ toUser, fromUser });
   res.end();
-}
+};
 
 export {
   getChatProfile,

@@ -42,7 +42,7 @@ const getProfile = async (req, res) => {
     profile,
     loggedUser: loggedUserAndPic,
     tagsSuggestions,
-    error: ''
+    error: '',
   });
 };
 
@@ -60,9 +60,9 @@ const getVisitsOrLikesProfiles = async (loginsArrayOfObj, blockedFilter) => {
       const index = profiles.findIndex(profile => profile.login === login);
       profilesRecentFirst.unshift(profiles[index]);
     }
-  })
+  });
   return profilesRecentFirst;
-}
+};
 
 const getMatchesProfiles = async (loginsArray, blockedFilter) => {
   const profiles = await Getter.getProfilesIn(loginsArray, blockedFilter);
@@ -72,11 +72,11 @@ const getMatchesProfiles = async (loginsArray, blockedFilter) => {
       const index = profiles.findIndex(profile => profile.login === login);
       profilesRecentFirst.unshift(profiles[index]);
     }
-  })
+  });
   return profilesRecentFirst;
-}
+};
 
-const getVisitsOrLikesOrMatches = (search) => async (req, res) => {
+const getVisitsOrLikesOrMatches = search => async (req, res) => {
   const login = User.getLoggedUser(req);
   const profile = await Getter.getUser({ field: 'login', value: login });
   const { blockedBy, blockes, likedBy, newLikedBy, visitedBy, newVisitedBy, matches } = profile;
@@ -99,18 +99,18 @@ const getVisitsOrLikesOrMatches = (search) => async (req, res) => {
     profile,
     profiles: profilesFilter,
     newProfiles: newProfilesFilter,
-    error: ''
+    error: '',
   });
-}
+};
 
 const closeProfile = async (req, res) => {
   const login = User.getLoggedUser(req);
   UserUpdater.closeProfile({ login });
   return res.send({
     success: true,
-    error: ''
+    error: '',
   });
-}
+};
 
 export {
   getMyProfile,

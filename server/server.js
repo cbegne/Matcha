@@ -33,7 +33,7 @@ Mongo.connect();
 // Check loggedUser tocken before connecting to socket Io
 io.use(socketioJwt.authorize({
   secret: process.env.SESSION_SECRET,
-  handshake: true
+  handshake: true,
 }));
 
 // Connect to socket Io
@@ -55,7 +55,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, callback) => {
     callback(null, file.fieldname + '-' + randtoken.generate(4) + '-' + Date.now() + path.extname(file.originalname).toLowerCase());
-  }
+  },
 });
 
 // Create multer method to upload pictures
@@ -78,9 +78,9 @@ app.use(cors());
 app.use(cookieParser());
 // Load requests parsers
 // extended false to use querystring (true, use qs)
-app.use(bodyParser.urlencoded({ limit: '1mb', extended: false, parameterLimit:5000 }));
+app.use(bodyParser.urlencoded({ limit: '1mb', extended: false, parameterLimit: 5000 }));
 
-app.use(bodyParser.json({limit: '1mb'}));
+app.use(bodyParser.json({ limit: '1mb' }));
 
 // Load routes
 routes(app, upload);

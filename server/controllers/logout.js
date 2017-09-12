@@ -5,6 +5,6 @@ const logout = (req, res) => {
   const login = getLoggedUser(req);
   disconnectUser({ login });
   res.end();
-}
+};
 
 export default logout;

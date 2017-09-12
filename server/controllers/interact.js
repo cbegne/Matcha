@@ -14,29 +14,27 @@ const addLike = async (req, res) => {
     Updater.addLike({ login, req });
   }
   res.send({ success: true, message: '' });
-}
+};
 
 const deleteLike = async (req, res) => {
-  console.log(req);
-  const { loginUnliked } = req.params;
   const login = User.getLoggedUser(req);
   Updater.deleteLikeAndMatch({ login, req });
   res.send({ success: true, message: '' });
-}
+};
 
 const addBlock = (req, res) => {
   const { loginBlocked } = req.params;
   const login = User.getLoggedUser(req);
   Updater.addBlock({ login, loginBlocked });
   res.send({ success: true, message: '' });
-}
+};
 
 const deleteBlock = (req, res) => {
   const { loginUnblocked } = req.params;
   const login = User.getLoggedUser(req);
   Updater.deleteBlock({ login, loginUnblocked });
   res.send({ success: true, message: '' });
-}
+};
 
 const reportAsFake = (req, res) => {
   const { loginReported } = req.params;
@@ -44,7 +42,7 @@ const reportAsFake = (req, res) => {
   Updater.reportAsFake({ login, loginReported });
   Updater.addBlock({ login, loginBlocked: loginReported });
   res.send({ success: true, message: '' });
-}
+};
 
 export {
   addLike,
